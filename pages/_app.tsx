@@ -1,4 +1,4 @@
-import { api } from "@/pages/utils/api";
+import { api } from "@/utils/api";
 
 import "./styles/globals.css";
 import { type AppType } from "next/app";

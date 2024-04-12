@@ -8,7 +8,7 @@ export const userLoginRouter = createTRPCRouter({
       z.object({
         userId: z.string(),
         code: z.string(),
-      }),
+      })
     )
     .mutation(async ({ ctx, input }) => {
       const now = new Date();
@@ -30,13 +30,15 @@ export const userLoginRouter = createTRPCRouter({
     .input(
       z.object({
         code: z.string(),
-      }),
+        userId: z.string().optional(),
+      })
     )
     .query(async ({ ctx, input }) => {
       console.log("date:", new Date());
       const userLog = await ctx.prisma.userLogin.findFirst({
         where: {
           code: input.code,
+          userId: input.userId,
           // invalidTime 大于现在的时间
           invalidTime: {
             gt: new Date(),

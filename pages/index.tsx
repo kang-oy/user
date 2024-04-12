@@ -1,9 +1,24 @@
+import { useEffect, useState } from "react";
 import Index from "./components/user";
 import { useRouter } from "next/router";
 
 export default function Home() {
   const router = useRouter();
   const { code } = router.query as { code: string };
+  const [codeValue, setCodeValue] = useState<string>("");
+
+  useEffect(() => {
+    if (code) {
+      setCodeValue(code);
+      localStorage.setItem("localdamCode", code);
+    } else {
+      const storedValue = localStorage.getItem("localdamCode");
+      if (storedValue) {
+        setCodeValue(storedValue);
+      }
+    }
+  }, [code]);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="flex mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
@@ -23,7 +38,7 @@ export default function Home() {
             Find in-depth information about Next.js features and API.
           </p>
         </a>
-        {code && <Index code={code} />}
+        {codeValue && <Index code={codeValue} />}
       </div>
     </main>
   );

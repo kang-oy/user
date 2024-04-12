@@ -1,6 +1,7 @@
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { api } from "../utils/api";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Index({ code }: { code: string }) {
   const { user, error, isLoading } = useUser();
@@ -16,7 +17,7 @@ export default function Index({ code }: { code: string }) {
       },
       {
         enabled: Boolean(user && user.email),
-      },
+      }
     );
 
   // 如果data为空，说明数据库中没有该用户，需要创建
@@ -59,9 +60,9 @@ export default function Index({ code }: { code: string }) {
       <p>Welcome {userInfo.name}! </p>{" "}
       {show && <button onClick={authSuccess}>登录成功，打开桌面应用</button>}
       <br />
-      <a href="/api/auth/logout">退出登录</a>
+      <Link href="/api/auth/logout">退出登录</Link>
       <br />
-      <a href={"/api/user/getUserByCode?code=" + code}>获取用户信息</a>
+      <Link href={"/api/user/getUserByCode?code=" + code}>获取用户信息</Link>
     </div>
   );
 }

@@ -10,6 +10,7 @@ export default function Index({ code }: { code: string }) {
   const [show, setShow] = useState(true);
 
   console.log("用户登录信息 user:", user);
+  console.log("error:", error);
   const { data: userInfo, isLoading: isUserLoading } =
     api.user.userQueryByEmail.useQuery(
       {

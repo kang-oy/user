@@ -9,7 +9,8 @@ export default function Index({ code }: { code: string }) {
   let { mutate } = api.userLogin.saveUserLogin.useMutation();
   const [show, setShow] = useState(true);
 
-  console.log("用户登录信息 user:", user);
+  console.log("user:", user);
+  console.log("用户登录信息 user:", user?.email);
   console.log("error: isLoading:", error, isLoading);
   const { data: userInfo, isLoading: isUserLoading } =
     api.user.userQueryByEmail.useQuery(

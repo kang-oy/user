@@ -44,7 +44,7 @@ export const HomeContent: FC = () => {
 
   return (
     <>
-      <div className="mb-[60px] flex w-full flex-col items-center justify-center gap-[60px] px-5 md:mb-0 md:h-[calc(100vh-170px)] md:px-0">
+      <div className="mb-[60px] flex w-full flex-1 flex-col items-center justify-center gap-[60px] px-5 md:mb-0 md:px-0">
         <div className="flex w-full flex-col items-center justify-center gap-[30px]">
           <div className="title mt-[40px] md:mt-0 text-center md:text-[60px] text-[40px] md:leading-[64px] leading-[50px]">
             Search your videos

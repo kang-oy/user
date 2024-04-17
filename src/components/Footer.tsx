@@ -1,4 +1,4 @@
-import logoText from '@/assets/icons/Logo-white.svg'
+import logoText from '@/assets/icons/Logo-footer.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ForwardRefRenderFunction, forwardRef } from 'react'

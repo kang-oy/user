@@ -136,4 +136,59 @@ export const nextRoadmap = [
     title: 'Advanced Sharing 2.0',
     des: 'Enhance the sharing capabilities by introducing public synchronization, snapshot sharing, and other advanced features, enabling seamless collaboration and content distribution.',
   },
+  {
+    time: 'Nov. 2024',
+    title: 'Copilot for File Management',
+    des: 'Leverage artificial intelligence to introduce a Copilot feature that can automatically rename, organize files and folders, and create new folders based on predefined rules or user preferences.',
+  },
+  {
+    time: 'Dec. 2024',
+    title: 'Landing Page Generation',
+    des: 'Implement a feature that generates optimized landing pages for shared content or search results, leveraging AI to create compelling visual experiences.',
+  },
+  {
+    time: 'Jan. 2025',
+    title: 'External Manager Integration',
+    des: 'Integrate with popular third-party digital asset management systems, such as Eagle, MuseDAM, and Baidu Netdisk, enabling users to seamlessly manage and access their media assets across multiple platforms.',
+  },
+  {
+    time: 'Jan. 2025',
+    title: 'Team Data and Analytics',
+    des: 'Introduce team-level data tracking and analytics, including operation logs, leaderboards, and other collaborative insights.',
+  },
+  {
+    time: 'Jan. 2025',
+    title: 'Multi-tenancy Support',
+    des: 'Implement multi-tenancy capabilities, enabling organizations to have dedicated instances with custom branding and configurations (e.g., subdomains).',
+  },
+  {
+    time: 'Jan. 2025',
+    title: 'Asset Versioning',
+    des: 'Develop a robust versioning system for media assets, allowing users to track changes, revert to previous versions, and maintain a clear audit trail.',
+  },
+  {
+    time: 'Feb. 2025',
+    title: 'Cross-Platform Compatibility',
+    des: 'Enhance compatibility by supporting a wider range of operating systems and device configurations, including older versions of Windows and macOS.',
+  },
+  {
+    time: 'Feb. 2025',
+    title: 'Mobile Apps',
+    des: 'Develop native mobile applications for iOS and Android, enabling users to access and manage their media assets on the go.',
+  },
+  {
+    time: 'Feb. 2025',
+    title: 'Plugin System',
+    des: "Introduce a plugin system that allows third-party developers to extend the platform's functionality, such as integrating with landing page builders, digital product platforms, or social media distribution channels.",
+  },
+  {
+    time: 'Mar. 2025',
+    title: 'Performance Optimization',
+    des: 'Conduct a comprehensive performance audit and implement optimizations to ensure a smooth and responsive user experience, even with large media libraries.',
+  },
+  {
+    time: 'Mar. 2025',
+    title: 'User Experience Enhancements',
+    des: 'Refine the user interface and overall user experience based on feedback and usage analytics, incorporating improvements to navigation, accessibility, and usability.',
+  },
 ]

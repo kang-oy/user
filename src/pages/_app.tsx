@@ -32,7 +32,8 @@ const MyApp: AppType<CustomAppProps> = ({ Component, pageProps: { ...pageProps }
   return (
     <Provider>
       <Head>
-        <title>MuseAI GENDAM</title>
+        <title>GenDAM</title>
+        <meta name="description" content="Search your videos with GenAI" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

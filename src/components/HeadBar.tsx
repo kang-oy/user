@@ -2,7 +2,6 @@ import closeIcon from '@/assets/icons/close.svg'
 import logoIcon from '@/assets/icons/logo-no-bg.svg'
 import menuIcon from '@/assets/icons/menu.svg'
 import logoText from '@/assets/icons/Logo.svg'
-import logoTextWhite from '@/assets/icons/Logo-white.svg'
 import { Dialog, Transition } from '@headlessui/react'
 import { twMerge } from 'tailwind-merge'
 import Image from 'next/image'
@@ -94,12 +93,9 @@ const HeadBar: ForwardRefRenderFunction<HTMLElement> = ({ }, ref) => {
               <div className="absolute left-5 right-5 top-0 flex h-[60px] items-center justify-between ">
                 <div className="flex items-center justify-start gap-[6px]">
                   <Image src={logoIcon} alt="GENDAM" width={24} height={36} className="h-auto w-5 md:w-6" />
-                  <Image
-                    src={logoTextWhite}
-                    alt="GENDAM"
-                    width={127}
-                    height={22}
-                    className="h-[18px] w-auto md:h-[22px]"
+                  <SvgIcon
+                    src={logoText}
+                    className="h-[18px] w-auto md:h-[22px] text-white"
                   />
                 </div>
                 <button className="outline-none focus-within:outline-none" onClick={() => setIsOpen(false)}>

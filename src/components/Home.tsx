@@ -46,14 +46,10 @@ export const HomeContent: FC = () => {
     <>
       <div className="mb-[60px] flex w-full flex-col items-center justify-center gap-[60px] px-5 md:mb-0 md:h-[calc(100vh-170px)] md:px-0">
         <div className="flex w-full flex-col items-center justify-center gap-[30px]">
-          {isMobile ? (
-            <div className="title mt-[40px] text-center text-[40px] leading-[50px]">
-              Craft Boldly,
-              <br /> Create Freely.
-            </div>
-          ) : (
-            <div className="title text-[60px] leading-[64px]">Craft Boldly, Create Freely.</div>
-          )}
+          <div className="title mt-[40px] md:mt-0 text-center md:text-[60px] text-[40px] md:leading-[64px] leading-[50px]">
+            Search your videos
+            <br />with GenAI
+          </div>
           <div className="text-center text-[16px] leading-[24px] text-[#4B5361]">
             Privacy first generative DAM.
             <br />

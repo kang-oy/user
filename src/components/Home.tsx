@@ -112,7 +112,7 @@ export const HomeContent: FC = () => {
               }}
             />
 
-            <div className="h-[43px] w-full bg-[#000] text-center leading-[43px] text-white" onClick={handleSubmit}>
+            <div className="h-[43px] w-full bg-[#000] text-center leading-[43px] text-white cursor-pointer transition-all duration-300 ease-in-out" onClick={handleSubmit}>
               Subscribe Now
             </div>
           </div>

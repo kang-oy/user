@@ -4,6 +4,7 @@ export default handleAuth({
     async login(req, res) {
         try {
             // 从请求中提取 email 参数
+            // 其他数据
             const { email } = req.query;
             // 处理登录，传递 email 作为 login_hint
             await handleLogin(req, res, {

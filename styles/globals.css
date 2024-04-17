@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* TODO 目前没有暗色的设计 */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+body::-webkit-scrollbar,
+.hidden-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@layer utilities {
+
+  /* 隐藏横向滚动条，className="no-scrollbar" */
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@font-face {
+  font-family: 'EuclidCircularA';
+  src: url('/public/fonts/Euclid-Circular-A-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBMPlexMono';
+  src: url('/public/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.title {
+  @apply font-euclidCircularAFont
+}
+
+input::placeholder {
+  font-size: 16px;
+  color: rgba(75, 83, 97, 0.4);
+}
+
+.tz-svg-icon {
+  display: inline-flex;
+  align-items: center;
+  line-height: initial;
+
+  >div {
+    display: flex;
+    align-items: center;
+  }
+
+  >span {
+    display: inline-flex;
+    align-items: center;
+  }
+}

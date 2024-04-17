@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        euclidCircularAFont: ['EuclidCircularA', 'sans-serif'],
+        IBMPlexMono: ['IBMPlexMono', 'sans-serif'],
+      },
+      colors: {
+        primary: '#000000',
+        lighter: '#4B5361',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

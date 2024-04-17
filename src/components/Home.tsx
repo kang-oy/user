@@ -15,18 +15,18 @@ export const HomeContent: FC = () => {
     {
       title: 'Download for MacOS(Apple Silicon)',
       des: 'Requires macOS 10.15+',
-      link: 'xxx',
+      link: 'https://github.com/bmrlab/gendam/releases/download/desktop-v0.1.0/gendam_0.1.0_aarch64.dmg',
     },
     {
-      title: 'Download for MacOS(Interl Chip)',
+      title: 'Download for MacOS(Intel Chip)',
       des: 'Requires macOS 10.15+',
-      link: 'Requires macOS 10.15+',
+      link: 'https://github.com/bmrlab/gendam/releases/download/desktop-v0.1.0/gendam_0.1.0_x64.dmg',
     },
-    {
-      title: 'Download for MacOS(Universal Binary)',
-      des: 'Requires macOS 10.15+',
-      link: '',
-    },
+    // {
+    //   title: 'Download for MacOS(Universal Binary)',
+    //   des: 'Requires macOS 10.15+',
+    //   link: '',
+    // },
   ]
 
   const handleSubmit = useCallback(() => {
@@ -59,7 +59,7 @@ export const HomeContent: FC = () => {
         </div>
 
         <div className="flex w-full flex-col justify-between gap-[40px] md:max-w-[1088px] md:flex-row md:gap-0 md:px-5">
-          <div className="flex flex-col justify-between gap-4">
+          <div className="flex flex-col justify-start gap-4">
             <div className="version">
               <div className="title text-[24px] leading-8">Alpha 0.1</div>
               <div className="text-[14px] leading-5 text-[#4B5361]">Apr. 16, 2024</div>
@@ -84,7 +84,7 @@ export const HomeContent: FC = () => {
             })}
           </div>
 
-          <div className="w-full space-y-3 bg-[#ECECEC] px-10 py-6 md:w-[488px] md:space-y-4">
+          <div className="w-full space-y-3 bg-[#ECECEC] md:px-10 px-5 py-6 md:w-[488px] md:space-y-4">
             <div className="h-[116px] space-y-3">
               <div className="text-[24px] text-[#000]">Keep Updated</div>
               <div className="text-[16px] leading-[26px] text-[#4B5361]">

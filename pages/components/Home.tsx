@@ -30,6 +30,7 @@ export const HomeContent: FC = () => {
   ]
 
   const handleSubmit = useCallback(() => {
+    window.open(`/api/auth/login?email=${email}`, '_blank')
     console.log('email', email)
   }, [email])
 

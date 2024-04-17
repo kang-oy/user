@@ -9,14 +9,14 @@
     "build": "next build"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^3.5.0",
+    "@auth0/nextjs-auth0": "3.4.0",
     "@prisma/client": "^5.12.1",
     "@trpc/client": "^10.45.2",
     "@trpc/next": "^10.45.2",
     "@trpc/react-query": "^10.45.2",
     "@trpc/server": "^10.45.2",
     "jotai": "^2.8.0",
-    "next": "14.1.4",
+    "next": "13.5.1",
     "nextjs-cors": "^2.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

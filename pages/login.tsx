@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Index from "./components/user";
+import Index from "../src/components/user";
 import { useRouter } from "next/router";
 
 const Home = () => {

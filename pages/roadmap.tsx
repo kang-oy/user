@@ -1,4 +1,4 @@
-import { RoadmapContent } from '@/pages/components/RoadMap'
+import { RoadmapContent } from '@/src/components/RoadMap'
 import { GetStaticProps, NextPage } from 'next'
 
 const AboutPage: NextPage = () => {

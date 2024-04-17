@@ -5,8 +5,8 @@ import Head from "next/head";
 import { Provider } from "jotai";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 import { NextPage } from "next";
-import HeadBar from "./components/HeadBar";
-import Footer from "./components/Footer";
+import HeadBar from "../src/components/HeadBar";
+import Footer from "../src/components/Footer";
 
 // import type { AppProps } from "next/app";
 

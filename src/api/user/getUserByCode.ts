@@ -1,5 +1,5 @@
-import { api } from "@/utils/api";
-import { withNextCors } from "@/utils/cors";
+import { api } from "@/src/utils/api";
+import { withNextCors } from "@/src/utils/cors";
 import { getCaller } from "@/server/api/root";
 import { NextApiRequest, NextApiResponse } from "next";
 

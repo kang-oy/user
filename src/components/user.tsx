@@ -1,5 +1,5 @@
 import { useUser } from "@auth0/nextjs-auth0/client";
-import { api } from "../../utils/api";
+import { api } from "../utils/api";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 

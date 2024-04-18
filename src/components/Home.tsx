@@ -44,7 +44,7 @@ export const HomeContent: FC = () => {
 
   return (
     <>
-      <div className="mb-[60px] flex w-full flex-1 flex-col items-center justify-center gap-[60px] px-5 md:mb-0 md:px-0">
+      <div className="mb-[60px] md:mb-[100px] md:pt-[80px] flex w-full flex-1 flex-col items-center justify-center gap-[60px] px-5 md:px-0">
         <div className="flex w-full flex-col items-center justify-center gap-[30px]">
           <div className="title mt-[40px] md:mt-0 text-center md:text-[60px] text-[40px] md:leading-[64px] leading-[50px]">
             Search your videos
@@ -67,7 +67,7 @@ export const HomeContent: FC = () => {
             {downloadLinks.map((item, index) => {
               return (
                 <div
-                  className="group flex w-full cursor-pointer items-center justify-between border border-[rgba(75,83,97,0.2)] px-4 h-[90px] transition-all duration-300 ease-in-out hover:border-[#000] md:w-[400px]"
+                  className="group flex w-full cursor-pointer items-center justify-between border border-[rgba(75,83,97,0.2)] px-4 h-[90px] transAll hover:border-[#000] md:w-[400px]"
                   key={`download-${index} `}
                   onClick={() => handleDownLoad(item.link)}
                 >
@@ -77,7 +77,7 @@ export const HomeContent: FC = () => {
                   </div>
                   <SvgIcon
                     src={IconDownload}
-                    className="h-4 w-4 text-[rgba(75,83,97,0.8)] transition-all duration-300 ease-in-out group-hover:text-[#000] "
+                    className="h-4 w-4 text-[rgba(75,83,97,0.8)] transAll group-hover:text-[#000] "
                   />
                 </div>
               )
@@ -86,7 +86,7 @@ export const HomeContent: FC = () => {
 
           <div className="w-full space-y-3 bg-[#ECECEC] md:px-10 px-5 py-6 md:w-[488px] md:space-y-4">
             <div className="h-[116px] space-y-3">
-              <div className="text-[24px] text-[#000]">Keep Updated</div>
+              <div className="text-[24px] text-[#000] title">Keep Updated</div>
               <div className="text-[16px] leading-[26px] text-[#4B5361]">
                 Stay up to date with our latest
                 <br />
@@ -108,7 +108,7 @@ export const HomeContent: FC = () => {
               }}
             />
 
-            <div className="h-[43px] w-full bg-[#000] text-center leading-[43px] text-white cursor-pointer transition-all duration-300 ease-in-out" onClick={handleSubmit}>
+            <div className="h-[43px] w-full bg-[#000] text-center leading-[43px] text-white cursor-pointer transAll" onClick={handleSubmit}>
               Subscribe Now
             </div>
           </div>
@@ -130,7 +130,7 @@ export const HomeContent: FC = () => {
             leaveTo="opacity-0 "
           >
             <Dialog.Panel className="w-full text-white">
-              <div className="ml-6 overflow-y-auto ">
+              <div className="ml-6 overflow-y-auto font-IBMPlexMonoLight">
                 Please use MacOS computer to
                 <br />
                 download for now.
@@ -145,7 +145,7 @@ export const HomeContent: FC = () => {
                   alt=""
                   width={14}
                   height={14}
-                  className="h-3 w-3 transition-all duration-300 ease-in-out "
+                  className="h-3 w-3 transAll "
                 />
               </button>
             </Dialog.Panel>

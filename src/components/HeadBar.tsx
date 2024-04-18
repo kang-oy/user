@@ -20,18 +20,15 @@ const HeadBar: ForwardRefRenderFunction<HTMLElement> = ({ }, ref) => {
 
   const navItems = [
     {
-      text: 'home',
-      mobileText: 'Home',
+      text: 'Home',
       href: '/',
     },
     {
-      text: 'roadmap',
-      mobileText: 'Roadmap',
+      text: 'Roadmap',
       href: '/roadmap',
     },
     {
-      text: 'about',
-      mobileText: 'About',
+      text: 'About',
       href: '/about',
     },
   ]
@@ -45,7 +42,7 @@ const HeadBar: ForwardRefRenderFunction<HTMLElement> = ({ }, ref) => {
         <div className="flex h-full w-full items-center justify-between border-b-[1px] border-[#000] px-5 md:px-10">
           <Link href="/" className="flex items-center justify-start gap-[6px]">
             <Image src={logoIcon} alt="GENDAM" width={24} height={36} className="h-auto w-5 md:w-6" />
-            <Image src={logoText} alt="GENDAM" width={127} height={22} className="h-[18px] w-auto md:h-[22px]" />
+            <Image src={logoText} alt="GENDAM" width={127} height={22} className="h-[18px] w-auto md:h-[19px]" />
           </Link>
           <nav className="ml-[30px] hidden md:block">
             <ul className="flex list-none items-center justify-start space-x-10">
@@ -55,7 +52,8 @@ const HeadBar: ForwardRefRenderFunction<HTMLElement> = ({ }, ref) => {
                     passHref
                     href={item.href}
                     className={twMerge(
-                      'relative inline-flex text-[14px] leading-[20px]',
+                      'relative inline-flex text-[14px] leading-[20px] hover:text-[#000]',
+                      'transAll',
                       pathname === item.href || (item.href !== '/' && pathname.includes(item.href))
                         ? 'text-[#000]'
                         : 'text-[#4B5361]',
@@ -73,7 +71,7 @@ const HeadBar: ForwardRefRenderFunction<HTMLElement> = ({ }, ref) => {
               setIsOpen(true)
             }}
           >
-            <SvgIcon src={menuIcon} className="h-auto w-[21px] transition-all duration-300 ease-in-out " />
+            <SvgIcon src={menuIcon} className="h-auto w-[21px] transAll " />
           </div>
         </div>
       </header>
@@ -104,7 +102,7 @@ const HeadBar: ForwardRefRenderFunction<HTMLElement> = ({ }, ref) => {
                     alt=""
                     width={16}
                     height={16}
-                    className="h-4 w-4 transition-all duration-300 ease-in-out "
+                    className="h-4 w-4 transAll "
                   />
                 </button>
               </div>
@@ -123,7 +121,7 @@ const HeadBar: ForwardRefRenderFunction<HTMLElement> = ({ }, ref) => {
                 leaveTo="opacity-0 translate-y-[calc(-100vh+60px)]"
               >
                 <Dialog.Panel className="fixed bottom-0 left-0 right-0 top-[60px] flex flex-col items-center text-white">
-                  <nav className="absolute bottom-[80px] w-full">
+                  <nav className="absolute bottom-[80px] w-full font-IBMPlexMonoLight">
                     <ul className="ml-10 flex list-none flex-col items-start">
                       {navItems.map((item, index) => (
                         <li key={index} className={`transform duration-700`}>
@@ -137,7 +135,7 @@ const HeadBar: ForwardRefRenderFunction<HTMLElement> = ({ }, ref) => {
                               pathname === item.href ? 'after:opacity-100' : 'after:opacity-0',
                             )}
                           >
-                            {item.mobileText}
+                            {item.text}
                           </Link>
                         </li>
                       ))}

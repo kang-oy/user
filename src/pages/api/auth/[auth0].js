@@ -7,11 +7,9 @@ export default handleAuth({
       // 其他数据
       const email = req.query.email
       const auth_code = req.query.auth_code ? '?auth_code=' + req.query.auth_code : ''
-
-      console.log('@@@--- req.headers', req.headers)
       // 生成登录 URL
       const url =
-        (req.headers.host = 'localhost:3000' ? 'http://localhost:3000' : 'https://' + req.headers.host) +
+        (req.headers.host == 'localhost:3000' ? 'http://localhost:3000' : 'https://' + req.headers.host) +
         '/authorization' +
         auth_code
       console.log('@@@--- url', url)

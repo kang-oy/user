@@ -100,3 +100,9 @@ input::placeholder {
 .transAll {
   @apply transition-all duration-300 ease-in-out
 }
+
+/* 解决ios input自带圆角 */
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}

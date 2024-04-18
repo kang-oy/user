@@ -84,11 +84,10 @@ export const HomeContent: FC = () => {
               )
             })}
           </div>
-
           <div className="w-full space-y-3 bg-[#ECECEC] px-5 py-6 md:w-[488px] md:space-y-4 md:px-10">
             <div className="h-[116px] space-y-3">
               <div className="title text-[24px] text-[#000]">Keep Updated</div>
-              <div className="text-[16px] leading-[26px] text-[#4B5361]">
+              <div className="text-[16px] leading-[26px] text-[#4B5361]  text-nowrap">
                 Stay up to date with our latest
                 <br />
                 developments and information.

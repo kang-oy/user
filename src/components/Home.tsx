@@ -12,8 +12,7 @@ export const HomeContent: FC = () => {
   const isMobile = useIsMobile()
   const [email, setEmail] = useState<string>('')
   const [open, setOpen] = useState(false)
-  const { userInfo } = useUserInfo()
-  console.log('userInfo', userInfo)
+  useUserInfo()
   const downloadLinks = [
     {
       title: 'Download for MacOS(Apple Silicon)',

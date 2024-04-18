@@ -39,7 +39,7 @@ export const HomeContent: FC = () => {
       setOpen(true)
       return
     }
-    console.log('link', link)
+    window.open(link, '_blank')
   }
 
   return (

@@ -13,7 +13,7 @@ const RoadmapItem = (props: { info: (typeof nextRoadmap)[number]; type: 'finishe
   const [showDes, setShowDes] = useState(false)
   return (
     <div className={twMerge(
-      "w-full border px-[10px] py-4 md:px-[30px] md:py-5 transition-all duration-200 ease-in-out",
+      "w-full border px-[10px] py-4 md:px-[30px] md:py-5 transAll",
       showDes ? 'max-h-[500px]' : 'md:max-h-[84px]'
     )}>
       <div className="flex items-start justify-between md:items-center">
@@ -39,15 +39,18 @@ const RoadmapItem = (props: { info: (typeof nextRoadmap)[number]; type: 'finishe
       </div>
       <Transition appear show={showDes} as={Fragment}>
         <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-200"
-          enterFrom="opacity-0 translate-y-[-20px]"
-          enterTo="opacity-100 translate-y-0"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100 translate-y-0"
-          leaveTo="opacity-0 translate-y-[-20px]"
+          as='div'
+          enter="ease-out duration-300"
+          enterFrom="opacity-0 max-h-0"
+          enterTo="opacity-100 max-h-[200px]"
+          leave="ease-in duration-300"
+          leaveFrom="opacity-100 max-h-[200px]"
+          leaveTo="opacity-0 max-h-0"
+          className='overflow-hidden'
         >
-          <div className='md:text-4 pl-[32px] text-[14px] leading-[21px]  text-[#4B5361] md:pl-[54px] md:leading-6'>{des}</div>
+          <div className='md:text-4 pl-[32px] text-[14px] leading-[21px]  text-[#4B5361] md:pl-[54px] md:leading-6'>
+            {des}
+          </div>
         </Transition.Child>
       </Transition>
     </div>

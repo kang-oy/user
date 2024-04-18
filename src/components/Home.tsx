@@ -1,11 +1,11 @@
+import closeIcon from '@/assets/icons/close.svg'
 import IconDownload from '@/assets/icons/download.svg'
-import SvgIcon from './svgIcon'
-import { FC, Fragment, useCallback, useState } from 'react'
-import { twMerge } from 'tailwind-merge'
 import { useIsMobile } from '@/hooks/mobile'
 import { Dialog, Transition } from '@headlessui/react'
-import closeIcon from '@/assets/icons/close.svg'
 import Image from 'next/image'
+import { FC, Fragment, useCallback, useState } from 'react'
+import { twMerge } from 'tailwind-merge'
+import SvgIcon from './svgIcon'
 
 export const HomeContent: FC = () => {
   const isMobile = useIsMobile()
@@ -46,9 +46,10 @@ export const HomeContent: FC = () => {
     <>
       <div className="mb-[60px] flex w-full flex-1 flex-col items-center justify-center gap-[60px] px-5 md:mb-0 md:px-0">
         <div className="flex w-full flex-col items-center justify-center gap-[30px]">
-          <div className="title mt-[40px] md:mt-0 text-center md:text-[60px] text-[40px] md:leading-[64px] leading-[50px]">
+          <div className="title mt-[40px] text-center text-[40px] leading-[50px] md:mt-0 md:text-[60px] md:leading-[64px]">
             Search your videos
-            <br />with GenAI
+            <br />
+            with GenAI
           </div>
           <div className="text-center text-[16px] leading-[24px] text-[#4B5361]">
             Privacy first generative DAM.
@@ -67,7 +68,7 @@ export const HomeContent: FC = () => {
             {downloadLinks.map((item, index) => {
               return (
                 <div
-                  className="group flex w-full cursor-pointer items-center justify-between border border-[rgba(75,83,97,0.2)] px-4 h-[90px] transition-all duration-300 ease-in-out hover:border-[#000] md:w-[400px]"
+                  className="group flex h-[90px] w-full cursor-pointer items-center justify-between border border-[rgba(75,83,97,0.2)] px-4 transition-all duration-300 ease-in-out hover:border-[#000] md:w-[400px]"
                   key={`download-${index} `}
                   onClick={() => handleDownLoad(item.link)}
                 >
@@ -84,7 +85,7 @@ export const HomeContent: FC = () => {
             })}
           </div>
 
-          <div className="w-full space-y-3 bg-[#ECECEC] md:px-10 px-5 py-6 md:w-[488px] md:space-y-4">
+          <div className="w-full space-y-3 bg-[#ECECEC] px-5 py-6 md:w-[488px] md:space-y-4 md:px-10">
             <div className="h-[116px] space-y-3">
               <div className="text-[24px] text-[#000]">Keep Updated</div>
               <div className="text-[16px] leading-[26px] text-[#4B5361]">
@@ -108,7 +109,10 @@ export const HomeContent: FC = () => {
               }}
             />
 
-            <div className="h-[43px] w-full bg-[#000] text-center leading-[43px] text-white cursor-pointer transition-all duration-300 ease-in-out" onClick={handleSubmit}>
+            <div
+              className="h-[43px] w-full cursor-pointer bg-[#000] text-center leading-[43px] text-white transition-all duration-300 ease-in-out"
+              onClick={handleSubmit}
+            >
               Subscribe Now
             </div>
           </div>

@@ -52,14 +52,14 @@ body::-webkit-scrollbar,
 
 @font-face {
   font-family: 'EuclidCircularA';
-  src: url('/public/fonts/Euclid-Circular-A-Regular.ttf') format('truetype');
+  src: url('/fonts/Euclid-Circular-A-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'IBMPlexMono';
-  src: url('/public/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+  src: url('/fonts/IBMPlexMono-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

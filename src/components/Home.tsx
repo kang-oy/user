@@ -59,7 +59,7 @@ export const HomeContent: FC = () => {
         </div>
 
         <div className="flex w-full flex-col justify-between gap-[40px] md:max-w-[1088px] md:flex-row md:gap-0 md:px-5">
-          <div className="flex flex-col justify-start gap-4">
+          <div className="flex flex-col justify-between gap-4">
             <div className="version">
               <div className="title text-[24px] leading-8">Alpha 0.1</div>
               <div className="text-[14px] leading-5 text-[#4B5361]">Apr. 16, 2024</div>
@@ -67,7 +67,7 @@ export const HomeContent: FC = () => {
             {downloadLinks.map((item, index) => {
               return (
                 <div
-                  className="group flex w-full cursor-pointer items-center justify-between border border-[rgba(75,83,97,0.2)] px-4 py-[9px] transition-all duration-300 ease-in-out hover:border-[#000] md:w-[400px]"
+                  className="group flex w-full cursor-pointer items-center justify-between border border-[rgba(75,83,97,0.2)] px-4 h-[90px] transition-all duration-300 ease-in-out hover:border-[#000] md:w-[400px]"
                   key={`download-${index} `}
                   onClick={() => handleDownLoad(item.link)}
                 >

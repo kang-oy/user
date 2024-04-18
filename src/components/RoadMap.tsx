@@ -1,15 +1,21 @@
-import { FC, useState } from 'react'
+import { FC, Fragment, useState } from 'react'
 import { finishedRodMap, nextRoadmap } from './roadmapConfig'
 import IconExpand from '@/assets/icons/expand.svg'
 import IconFinished from '@/assets/icons/finished.svg'
 import IconNext from '@/assets/icons/next.svg'
+import IconCollapse from '@/assets/icons/collapse.svg'
 import SvgIcon from './svgIcon'
+import { twMerge } from 'tailwind-merge'
+import { Transition } from '@headlessui/react'
 
 const RoadmapItem = (props: { info: (typeof nextRoadmap)[number]; type: 'finished' | 'next' }) => {
   const { time, title, des } = props.info
   const [showDes, setShowDes] = useState(false)
   return (
-    <div className="w-full border px-[10px] py-4 md:px-[30px] md:py-5">
+    <div className={twMerge(
+      "w-full border px-[10px] py-4 md:px-[30px] md:py-5 transAll",
+      showDes ? 'max-h-[500px]' : 'md:max-h-[84px]'
+    )}>
       <div className="flex items-start justify-between md:items-center">
         <div className="left flex items-start gap-2 md:items-center md:gap-4">
           <SvgIcon
@@ -22,41 +28,52 @@ const RoadmapItem = (props: { info: (typeof nextRoadmap)[number]; type: 'finishe
           </div>
         </div>
         <div
-          className="flex h-5 w-5 cursor-pointer items-center justify-center text-[rgba(75,83,97,0.8)] hover:text-black md:h-10 md:w-10 "
+          className="flex h-5 w-5 cursor-pointer items-center justify-center text-[rgba(75,83,97,0.8)] hover:text-black md:h-10 md:w-10"
           onClick={() => setShowDes(!showDes)}
         >
           <SvgIcon
-            src={IconExpand}
-            className="h-3 w-3 text-inherit transition-all duration-300 ease-in-out md:h-4 md:w-4"
+            src={showDes ? IconCollapse : IconExpand}
+            className="h-3 w-3 text-inherit transAll md:h-4 md:w-4"
           />
         </div>
       </div>
-      <div
-        className={`md:text-4 pl-[32px] text-[14px] leading-[21px] text-[#4B5361] transition-all duration-300 ease-in-out md:pl-[54px] md:leading-6 ${showDes ? 'mt-2 h-auto opacity-100 ' : 'h-0 opacity-0'} `}
-      >
-        {des}
-      </div>
+      <Transition appear show={showDes} as={Fragment}>
+        <Transition.Child
+          as='div'
+          enter="ease-out duration-300"
+          enterFrom="opacity-0 max-h-0"
+          enterTo="opacity-100 max-h-[200px]"
+          leave="ease-in duration-300"
+          leaveFrom="opacity-100 max-h-[200px]"
+          leaveTo="opacity-0 max-h-0"
+          className='overflow-hidden'
+        >
+          <div className='md:text-4 pl-[32px] text-[14px] leading-[21px]  text-[#4B5361] md:pl-[54px] md:leading-6'>
+            {des}
+          </div>
+        </Transition.Child>
+      </Transition>
     </div>
   )
 }
 export const RoadmapContent: FC = () => {
   return (
-    <div className="w-full space-y-[30px] px-5 pb-[60px] pt-[40px] md:space-y-[37px] md:p-[60px] md:pb-[80px]">
+    <div className="w-full space-y-0 px-5 pb-[60px] pt-[40px] md:space-y-[37px] md:p-[60px] md:pb-[80px] flex flex-col items-center">
       <div className="title w-full text-center text-[40px] leading-[50px] md:text-[61px] md:leading-[64px]">
         Roadmap
       </div>
 
-      <div className="text-5 w-full text-center font-[400] leading-6 text-[#4B5361]">
+      <div className="text-5 w-full text-center font-[400] leading-6 text-[#4B5361] pt-[16px] pb-[30px] md:p-0">
         Last updated: <span className="font-[500]">April 16, 2024</span>
       </div>
 
-      <div className="flex flex-col gap-[30px] md:gap-[48px]">
+      <div className="flex flex-col gap-[30px] md:gap-[48px] md:max-w-[1080px] w-full">
         {finishedRodMap.map((item, index) => {
           const { title, updates } = item
           return (
-            <div key={index} className="flex flex-col gap-4 md:gap-6">
-              <div className="text-6 leading-[32px] text-black md:text-[32px] ">{title}</div>
-              <div className="flex flex-col gap-6">
+            <div key={index} className="flex flex-col gap-4 md:gap-6  shrink-0">
+              <div className="text-[24px] leading-[32px] text-black md:text-[32px] title">{title}</div>
+              <div className="flex flex-col gap-6 ">
                 {updates.map((item, i) => (
                   <RoadmapItem info={item} type="finished" key={`roadmap-${index}-${i}`} />
                 ))}
@@ -66,7 +83,7 @@ export const RoadmapContent: FC = () => {
         })}
 
         <div className="flex flex-col gap-4 md:gap-6">
-          <div className="text-6 leading-[32px] text-black md:text-[32px]">Coming Soon...</div>
+          <div className="text-[24px] leading-[32px] text-black md:text-[32px]">Coming Soon...</div>
           <div className="flex flex-col gap-6">
             {nextRoadmap.map((item, i) => (
               <RoadmapItem info={item} type="next" key={`roadmap-next-${i}`} />

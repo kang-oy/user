@@ -58,8 +58,16 @@ body::-webkit-scrollbar,
 }
 
 @font-face {
-  font-family: 'IBMPlexMono';
+  font-family: 'IBMPlexMonoRegular';
   src: url('/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'IBMPlexMonoLight';
+  src: url('/fonts/IBMPlexMono-Light.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -87,4 +95,8 @@ input::placeholder {
     display: inline-flex;
     align-items: center;
   }
+}
+
+.transAll {
+  @apply transition-all duration-300 ease-in-out
 }

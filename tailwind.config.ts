@@ -4,9 +4,13 @@ const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      transitionProperty: {
+        'height': 'height',
+      },
       fontFamily: {
         euclidCircularAFont: ['EuclidCircularA', 'sans-serif'],
-        IBMPlexMono: ['IBMPlexMono', 'sans-serif'],
+        IBMPlexMonoRegular: ['IBMPlexMonoRegular', 'sans-serif'],
+        IBMPlexMonoLight: ['IBMPlexMonoLight', 'sans-serif'],
       },
       colors: {
         primary: '#000000',

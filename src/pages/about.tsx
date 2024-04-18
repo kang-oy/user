@@ -14,23 +14,25 @@ const AboutPage: NextPage = () => {
   ]
 
   return (
-    <div className="w-full px-5 pb-[60px] pt-[40px] md:p-[60px] md:pb-[80px]">
-      <div className="title mb-[30px] w-full text-center text-[40px] leading-[50px] md:mb-[37px] md:text-[61px] md:leading-[64px]">
-        Our Version
-      </div>
+    <div className="w-full px-5 pb-[60px] pt-[40px] md:p-[60px] md:pb-[80px] flex flex-col items-center">
+      <div className='max-w-[1080px]'>
+        <div className="title mb-[30px] w-full text-center text-[40px] leading-[50px] md:mb-[37px] md:text-[61px] md:leading-[64px]">
+          About
+        </div>
 
-      <div className="title mb-[30px] text-[24px] leading-[32px] md:mb-6 md:text-[32px] md:leading-[40px]">
-        GENDAM：Elevating Digital Creativity
-      </div>
+        <div className="title mb-[30px] text-[24px] leading-[32px] md:mb-6 md:text-[32px] md:leading-[40px]">
+          GENDAM：Elevating Digital Creativity
+        </div>
 
-      <div className="space-y-[30px] md:space-y-7">
-        {details.map((line, index) => {
-          return (
-            <div key={index} className="md:text-4 text-[14px] leading-[24px] text-[#4B5361] md:leading-7">
-              {line}
-            </div>
-          )
-        })}
+        <div className="space-y-[30px] md:space-y-7">
+          {details.map((line, index) => {
+            return (
+              <div key={index} className="md:text-4 text-[14px] leading-[24px] text-[#4B5361] md:leading-7">
+                {line}
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

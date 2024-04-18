@@ -8,7 +8,6 @@ import { NextPage } from "next";
 import HeadBar from "../components/HeadBar";
 import Footer from "../components/Footer";
 
-
 // import type { AppProps } from "next/app";
 
 // export default function App({ Component, pageProps }: AppProps) {
@@ -37,7 +36,7 @@ const MyApp: AppType<CustomAppProps> = ({ Component, pageProps: { ...pageProps }
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="min-h-screen font-IBMPlexMono">
+      <main className="min-h-screen font-IBMPlexMonoLight">
         <UserProvider>
           {!hideBar && <HeadBar />}
           <Component {...pageProps} />

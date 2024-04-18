@@ -1,6 +1,7 @@
 import closeIcon from '@/assets/icons/close.svg'
 import IconDownload from '@/assets/icons/download.svg'
 import { useIsMobile } from '@/hooks/mobile'
+import { useUserInfo } from '@/hooks/useUserInfo'
 import { Dialog, Transition } from '@headlessui/react'
 import Image from 'next/image'
 import { FC, Fragment, useCallback, useState } from 'react'
@@ -9,8 +10,10 @@ import SvgIcon from './svgIcon'
 
 export const HomeContent: FC = () => {
   const isMobile = useIsMobile()
-  const [email, setEmail] = useState<string>()
+  const [email, setEmail] = useState<string>('')
   const [open, setOpen] = useState(false)
+  const { userInfo } = useUserInfo()
+  console.log('userInfo', userInfo)
   const downloadLinks = [
     {
       title: 'Download for MacOS(Apple Silicon)',
@@ -87,7 +90,7 @@ export const HomeContent: FC = () => {
           <div className="w-full space-y-3 bg-[#ECECEC] px-5 py-6 md:w-[488px] md:space-y-4 md:px-10">
             <div className="h-[116px] space-y-3">
               <div className="title text-[24px] text-[#000]">Keep Updated</div>
-              <div className="text-[16px] leading-[26px] text-[#4B5361]  text-nowrap">
+              <div className="text-nowrap text-[16px] leading-[26px]  text-[#4B5361]">
                 Stay up to date with our latest
                 <br />
                 developments and information.
@@ -132,7 +135,7 @@ export const HomeContent: FC = () => {
             leaveTo="opacity-0 "
           >
             <Dialog.Panel className="w-full text-white">
-              <div className="font-IBMPlexMonoLight ml-6 overflow-y-auto">
+              <div className="ml-6 overflow-y-auto font-IBMPlexMonoLight">
                 Please use MacOS computer to
                 <br />
                 download for now.

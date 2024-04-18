@@ -62,12 +62,12 @@ export const finishedRodMap = [
 ]
 export const nextRoadmap = [
   {
-    time: 'Mar. 2024',
+    time: 'May. 2024',
     title: 'Documentation and Support',
     des: 'Develop comprehensive documentation and support resources, including tutorials, FAQs, and knowledge base articles, to ensure a seamless onboarding and adoption process for new users.',
   },
   {
-    time: 'Mar. 2024',
+    time: 'May. 2024',
     title: 'Metadata Management',
     des: 'Develop a robust system for managing metadata, tags, and automatic synchronization with external data sources, enabling efficient organization and discoverability of media assets.',
   },

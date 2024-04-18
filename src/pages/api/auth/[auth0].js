@@ -6,13 +6,11 @@ export default handleAuth({
       // 从请求中提取 email 参数
       // 其他数据
       const email = req.query.email
-      const state_code = req.query.state_code
-      console.log('@@@---', req.headers)
-      console.log('@@@---', req.protocol)
+      const auth_code = req.query.auth_code ? '?auth_code=' + req.query.auth_code : ''
       const url =
         (req.headers.host = 'localhost:3000' ? 'http://localhost:3000' : 'https://' + req.headers.host) +
-        '/login?state_code=' +
-        state_code
+        '/authorization' +
+        auth_code
       console.log('@@@--- url', url)
       // 处理登录，传递 email 作为 login_hint
       await handleLogin(req, res, {

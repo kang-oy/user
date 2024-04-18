@@ -2,11 +2,10 @@ import { useUser } from '@auth0/nextjs-auth0/client'
 import { useEffect } from 'react'
 import { api } from '../utils/api'
 
-export default function User() {
-  const { user, error, isLoading } = useUser()
+export const useUserInfo = () => {
+  const { user } = useUser()
   const { mutate: create } = api.user.userCreate.useMutation()
 
-  console.log('user:', user)
   const { data: userInfo, isLoading: isUserLoading } = api.user.userQueryByEmail.useQuery(
     {
       email: user?.email!,
@@ -28,5 +27,5 @@ export default function User() {
     }
   }, [userInfo, isUserLoading, create, user?.email, user?.email_verified, user?.name])
 
-  return <></>
+  return { userInfo }
 }
